@@ -17,7 +17,7 @@ resource "aws_vpc" "main" {
   cidr_block = var.vpc_cidr_block
 
   tags = {
-    Name = "skillmix-lab-vpc"
+    Name = "challenge-1-vpc"
   }
 }
 
@@ -26,7 +26,7 @@ resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name = "skillmix-lab-internet-gateway"
+    Name = "challenge-1-internet-gateway"
   }
 }
 
@@ -40,7 +40,7 @@ resource "aws_subnet" "public_subnet" {
   cidr_block        = each.value
 
   tags = {
-    Name = "myskillmix-lab-public-subnet-${each.key}"
+    Name = "challenge-1-public-subnet-${each.key}"
   }
 }
 
@@ -54,7 +54,7 @@ resource "aws_subnet" "private_subnet" {
   cidr_block        = each.value
 
   tags = {
-    Name = "skillmix-lab-private-subnet-${each.key}"
+    Name = "challenge-1-private-subnet-${each.key}"
   }
 }
 
@@ -68,7 +68,7 @@ resource "aws_subnet" "database_subnet" {
   cidr_block        = each.value
 
   tags = {
-    Name = "skillmix-lab-database-subnet-${each.key}"
+    Name = "challenge-1-database-subnet-${each.key}"
   }
 }
 
